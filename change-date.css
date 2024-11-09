@@ -1,0 +1,53 @@
+/* Change Ticket Page Styling */
+.change-ticket-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.change-ticket-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.change-ticket-form input[type="text"],
+.change-ticket-form select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.date-picker {
+    display: flex;
+    justify-content: space-between;
+}
+
+.date-picker input[type="date"] {
+    width: calc(48% - 10px);
+}
+
+.confirm-change-button {
+    background-color: #f05d5e;
+    color: white;
+    width: 100%;
+    padding: 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.confirm-change-button:hover {
+    background-color: #d64545;
+}
+
+.change-confirmation-message {
+    margin-top: 15px;
+    color: #28a745; /* Success message */
+    text-align: center;
+    font-size: 16px;
+}

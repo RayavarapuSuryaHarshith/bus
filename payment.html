@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Ticket Payment</title>
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Bus Reservation</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="search.html">Search Buses</a>
+            <a href="reports.html">Operator Reports</a>
+            <!-- <a href="cancel.html">Cancel Ticket</a>
+            <a href="change-date.html">Change Travel Date</a>
+            <a href="view-ticket.html">View Ticket</a> -->
+            <a href="feedback.html">Feedback</a>
+            <div class="account-menu">
+                <button onclick="toggleAccountMenu()">Account</button>
+                <div id="account-dropdown" class="dropdown-content">
+                    <a href="cancel.html">Cancel Ticket</a>
+                    <a href="change-date.html">Change Travel Date</a>
+                    <a href="view-ticket.html">View Ticket</a>
+                    <a href="login.html" onclick="showPage('login-signup')">Login/Sign Up</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Bus Ticket Payment</h2>
+        
+        <!-- Display Bus Information -->
+        <div id="bus-info"></div>
+
+        <form id="reservation_form" method="post">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="payment_method">Payment Method:</label>
+            <select id="payment_method" name="payment_method" required>
+                <option value="">Select Payment Method</option>
+                <option value="credit_card">Credit Card</option>
+                <option value="debit_card">Debit Card</option>
+                <option value="paypal">PayPal</option>
+            </select>
+
+            <button type="submit">Confirm Reservation</button>
+        </form>
+    </div>
+
+    <script>
+        // Function to get URL parameters
+        function getUrlParams() {
+            const params = {};
+            const queryString = window.location.search.substring(1);
+            const regex = /([^&=]+)=([^&]*)/g;
+            let m;
+
+            while (m = regex.exec(queryString)) {
+                params[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
+            }
+            
+            return params;
+        }
+
+        // Populate bus info on page load
+        window.onload = function() {
+            const params = getUrlParams();
+            const busInfoDiv = document.getElementById('bus-info');
+            
+            if (params.busId) {
+                busInfoDiv.innerHTML = `
+                    <h3>Bus ${params.busId}</h3>
+                    <p><strong>Departure:</strong> ${params.departure}</p>
+                    <p><strong>Arrival:</strong> ${params.arrival}</p>
+                    <p><strong>Date:</strong> ${params.date}</p>
+                    <p><strong>Time:</strong> ${params.time}</p>
+                    <p><strong>Price:</strong> ${params.price}</p>
+                `;
+            }
+        };
+    </script>
+
+    <footer>
+        <p>&copy; 2024 Bus Ticket Reservation System</p>
+    </footer>
+
+</body>
+</html>

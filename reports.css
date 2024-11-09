@@ -1,0 +1,23 @@
+/* Reports Page Specific Styling */
+.report-form {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.report-form select, .report-form button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.report-output {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f4f4f4;
+}

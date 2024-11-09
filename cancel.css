@@ -1,0 +1,49 @@
+/* Cancel Ticket Page Styling */
+.cancel-ticket-container {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.cancel-message {
+    font-size: 18px;
+    color: #e63946;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.confirm-cancel-button, .back-button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.confirm-cancel-button {
+    background-color: #e63946;
+    color: white;
+}
+
+.confirm-cancel-button:hover {
+    background-color: #d62839;
+}
+
+.back-button {
+    background-color: #ccc;
+    color: #333;
+}
+
+.back-button:hover {
+    background-color: #bbb;
+}
+
+.cancellation-confirmation {
+    color: #28a745; /* Success message */
+    text-align: center;
+    margin-top: 15px;
+    font-size: 16px;
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Buses - Bus Ticket Reservation System</title>
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="search.css"> 
+
+</head>
+<body>
+    <header>
+        <div class="logo">Bus Reservation</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="search.html">Search Buses</a>
+            <a href="reports.html">Operator Reports</a>
+            <!-- <a href="cancel.html">Cancel Ticket</a>
+            <a href="change-date.html">Change Travel Date</a>
+            <a href="view-ticket.html">View Ticket</a> -->
+            <a href="feedback.html">Feedback</a>
+            <div class="account-menu">
+                <button onclick="toggleAccountMenu()">Account</button>
+                <div id="account-dropdown" class="dropdown-content">
+                    <a href="cancel.html">Cancel Ticket</a>
+                    <a href="change-date.html">Change Travel Date</a>
+                    <a href="view-ticket.html">View Ticket</a>
+                    <a href="login.html" onclick="showPage('login-signup')">Login/Sign Up</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section id="search" class="page">
+        <h2>Search for Buses</h2>
+        <form id="search-form">
+            <label for="departure">Departure Location:</label>
+            <input type="text" id="departure" required placeholder="Enter departure location">
+            <br>
+            <label for="arrival">Arrival Location:</label>
+            <input type="text" id="arrival" required placeholder="Enter arrival location">
+            <br>
+            <label for="date">Date:</label>
+            <input type="date" id="date" required>
+            <br>
+            <br>
+            <button type="button" onclick="searchBuses()">Search</button>
+        </form>
+        <div id="results"></div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Bus Ticket Reservation System</p>
+    </footer>
+
+    <!-- JavaScript to handle bus search -->
+    <script>
+        function searchBuses() {
+            // Clear previous results
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = '';
+
+            // Create two bus entries
+            const buses = [
+                {
+                    id: 1,
+                    departure: document.getElementById('departure').value,
+                    arrival: document.getElementById('arrival').value,
+                    date: document.getElementById('date').value,
+                    time: '10:00 AM',
+                    price: '$25'
+                },
+                {
+                    id: 2,
+                    departure: document.getElementById('departure').value,
+                    arrival: document.getElementById('arrival').value,
+                    date: document.getElementById('date').value,
+                    time: '02:00 PM',
+                    price: '$30'
+                }
+            ];
+
+            // Generate HTML for each bus as a card
+            buses.forEach(bus => {
+                const busCard = document.createElement('div');
+                busCard.className = 'bus-card';
+                busCard.innerHTML = `
+                    <h3>Bus ${bus.id}</h3>
+                    <p><strong>Departure:</strong> ${bus.departure}</p>
+                    <p><strong>Arrival:</strong> ${bus.arrival}</p>
+                    <p><strong>Date:</strong> ${bus.date}</p>
+                    <p><strong>Time:</strong> ${bus.time}</p>
+                    <p><strong>Price:</strong> ${bus.price}</p>
+                `;
+
+                // Add click event to redirect to payment page
+                busCard.onclick = function() {
+                    window.location.href = `payment.html?busId=${bus.id}&departure=${encodeURIComponent(bus.departure)}&arrival=${encodeURIComponent(bus.arrival)}&date=${encodeURIComponent(bus.date)}&time=${encodeURIComponent(bus.time)}&price=${encodeURIComponent(bus.price)}`;
+                };
+
+                resultsDiv.appendChild(busCard);
+            });
+        }
+    </script>
+
+</body>
+</html>

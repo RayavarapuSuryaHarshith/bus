@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Travel Date - Bus Ticket Reservation System</title>
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="change-date.css">
+
+</head>
+<body>
+    <header>
+        <div class="logo">Bus Reservation</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="search.html">Search Buses</a>
+            <a href="reports.html">Operator Reports</a>
+            <!-- <a href="cancel.html">Cancel Ticket</a>
+            <a href="change-date.html">Change Travel Date</a>
+            <a href="view-ticket.html">View Ticket</a> -->
+            <a href="feedback.html">Feedback</a>
+            <div class="account-menu">
+                <button onclick="toggleAccountMenu()">Account</button>
+                <div id="account-dropdown" class="dropdown-content">
+                    <a href="cancel.html">Cancel Ticket</a>
+                    <a href="change-date.html">Change Travel Date</a>
+                    <a href="view-ticket.html">View Ticket</a>
+                    <a href="login.html" onclick="showPage('login-signup')">Login/Sign Up</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section id="change-date" class="page">
+        <h2>Change Travel Date</h2>
+        <form id="change-date-form">
+            <label for="current-booking-id">Current Booking ID:</label>
+            <input type="text" id="current-booking-id" required placeholder="Enter current booking ID">
+            <label for="new-date">New Travel Date:</label>
+            <input type="date" id="new-date" required>
+            <button type="button" onclick="changeTravelDate()">Change Date</button>
+        </form>
+        <p id="change-date-confirmation"></p>
+    </section>
+    <footer>
+        <p>&copy; 2024 Bus Ticket Reservation System</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,47 @@
+/* View Ticket Page Styling */
+.ticket-view-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.ticket-details {
+    padding: 15px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.ticket-details h2 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #e63946;
+}
+
+.ticket-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.ticket-info label {
+    font-weight: bold;
+}
+
+.ticket-action-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.ticket-action-buttons button {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.ticket-action-buttons button:last-child {
+    margin-right: 0;
+}

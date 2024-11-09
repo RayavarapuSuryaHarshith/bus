@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Ticket Reservation System</title>
+    <link rel="stylesheet" href="global.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Bus Reservation</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="search.html">Search Buses</a>
+            <a href="reports.html">Operator Reports</a>
+            <!-- <a href="cancel.html">Cancel Ticket</a>
+            <a href="change-date.html">Change Travel Date</a>
+            <a href="view-ticket.html">View Ticket</a> -->
+            <a href="feedback.html">Feedback</a>
+            <div class="account-menu">
+                <button onclick="toggleAccountMenu()">Account</button>
+                <div id="account-dropdown" class="dropdown-content">
+                    <a href="cancel.html">Cancel Ticket</a>
+                    <a href="change-date.html">Change Travel Date</a>
+                    <a href="view-ticket.html">View Ticket</a>
+                    <a href="login.html" onclick="showPage('login-signup')">Login/Sign Up</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section id="home" class="page active">
+        <h2>Welcome to the Bus Ticket Reservation System</h2>
+        <p>Manage your bus travel conveniently. Search for buses, book tickets, make payments, cancel bookings, and view reports all in one place.</p>
+        <img src="49293b95-b2e5-4300-9780-c52252cb4137.jpeg" alt="bus">
+    </section>
+    <footer>
+        <p>&copy; 2024 Bus Ticket Reservation System</p>
+    </footer>
+</body>
+</html>

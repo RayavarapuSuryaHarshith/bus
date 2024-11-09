@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - Bus Ticket Reservation System</title>
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="feedback.css">
+
+</head>
+<body>
+    <header>
+        <div class="logo">Bus Reservation</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="search.html">Search Buses</a>
+            <a href="reports.html">Operator Reports</a>
+            <!-- <a href="cancel.html">Cancel Ticket</a>
+            <a href="change-date.html">Change Travel Date</a>
+            <a href="view-ticket.html">View Ticket</a> -->
+            <a href="feedback.html">Feedback</a>
+            <div class="account-menu">
+                <button onclick="toggleAccountMenu()">Account</button>
+                <div id="account-dropdown" class="dropdown-content">
+                    <a href="cancel.html">Cancel Ticket</a>
+                    <a href="change-date.html">Change Travel Date</a>
+                    <a href="view-ticket.html">View Ticket</a>
+                    <a href="login.html" onclick="showPage('login-signup')">Login/Sign Up</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section id="feedback" class="page">
+        <h2>Feedback</h2>
+        <form id="feedback-form">
+            <label for="feedback_name">Your Name:</label>
+            <input type="text" name="name" id="feedback_name" class="form-input" placeholder="Enter your name">
+            
+            <label for="feedback_email">Email:</label>
+            <input type="email" name="email" id="feedback_email" class="form-input" placeholder="Enter your email">
+            
+            <label>Rate your experience:</label>
+            <div class="rating-options">
+                <div class="rating-option">
+                    <input type="radio" name="rating" id="rating_bad" value="bad">
+                    <label for="rating_bad">Bad</label>
+                </div>
+                <div class="rating-option">
+                    <input type="radio" name="rating" id="rating_good" value="good">
+                    <label for="rating_good">Good</label>
+                </div>
+                <div class="rating-option">
+                    <input type="radio" name="rating" id="rating_excellent" value="excellent">
+                    <label for="rating_excellent">Excellent</label>
+                </div>
+            </div>
+            
+            <label for="feedback_comments">Comments:</label>
+            <textarea rows="4" name="comments" id="feedback_comments" class="form-textarea" placeholder="Enter your comments"></textarea>
+            
+            <button type="button" class="submit-button" onclick="submitFeedback()">Submit</button>
+        </form>
+        <p id="feedback-confirmation"></p>
+    </section>
+    <footer>
+        <p>&copy; 2024 Bus Ticket Reservation System</p>
+    </footer>
+</body>
+</html>
