@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cancel Ticket - Bus Ticket Reservation System</title>
-    <link rel="stylesheet" href="global.css">
-    <link rel="stylesheet" href="cancel.css">
-
+    <link rel="stylesheet" href="global.css" />
+    <link rel="stylesheet" href="cancel.css" />
 </head>
 <body>
     <header>
@@ -15,9 +14,6 @@
             <a href="index.html">Home</a>
             <a href="search.html">Search Buses</a>
             <a href="reports.html">Operator Reports</a>
-            <!-- <a href="cancel.html">Cancel Ticket</a>
-            <a href="change-date.html">Change Travel Date</a>
-            <a href="view-ticket.html">View Ticket</a> -->
             <a href="feedback.html">Feedback</a>
             <div class="account-menu">
                 <button onclick="toggleAccountMenu()">Account</button>
@@ -30,17 +26,21 @@
             </div>
         </nav>
     </header>
+
     <section id="cancel" class="page">
         <h2>Cancel a Ticket</h2>
         <form id="cancel-form">
             <label for="booking-id">Booking ID:</label>
-            <input type="text" id="booking-id" required placeholder="Enter booking ID">
-            <button type="button" onclick="cancelTicket()">Cancel Booking</button>
+            <input type="text" id="booking-id" required placeholder="Enter booking ID" />
+            <button type="button" id="cancel-booking-btn">Cancel Booking</button>
         </form>
         <p id="cancellation-confirmation"></p>
     </section>
+
     <footer>
         <p>&copy; 2024 Bus Ticket Reservation System</p>
     </footer>
+
+    <script src="cancel.js"></script>
 </body>
 </html>
