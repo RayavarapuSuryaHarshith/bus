@@ -6,7 +6,6 @@
     <title>Search Buses - Bus Ticket Reservation System</title>
     <link rel="stylesheet" href="global.css">
     <link rel="stylesheet" href="search.css"> 
-
 </head>
 <body>
     <header>
@@ -43,63 +42,13 @@
             <input type="date" id="date" required>
             <br>
             <br>
-            <button type="button" onclick="searchBuses()">Search</button>
+            <button type="button" id="search-btn">Search</button>
         </form>
         <div id="results"></div>
     </section>
     <footer>
         <p>&copy; 2024 Bus Ticket Reservation System</p>
     </footer>
-
-    <!-- JavaScript to handle bus search -->
-    <script>
-        function searchBuses() {
-            // Clear previous results
-            const resultsDiv = document.getElementById('results');
-            resultsDiv.innerHTML = '';
-
-            // Create two bus entries
-            const buses = [
-                {
-                    id: 1,
-                    departure: document.getElementById('departure').value,
-                    arrival: document.getElementById('arrival').value,
-                    date: document.getElementById('date').value,
-                    time: '10:00 AM',
-                    price: '$25'
-                },
-                {
-                    id: 2,
-                    departure: document.getElementById('departure').value,
-                    arrival: document.getElementById('arrival').value,
-                    date: document.getElementById('date').value,
-                    time: '02:00 PM',
-                    price: '$30'
-                }
-            ];
-
-            // Generate HTML for each bus as a card
-            buses.forEach(bus => {
-                const busCard = document.createElement('div');
-                busCard.className = 'bus-card';
-                busCard.innerHTML = `
-                    <h3>Bus ${bus.id}</h3>
-                    <p><strong>Departure:</strong> ${bus.departure}</p>
-                    <p><strong>Arrival:</strong> ${bus.arrival}</p>
-                    <p><strong>Date:</strong> ${bus.date}</p>
-                    <p><strong>Time:</strong> ${bus.time}</p>
-                    <p><strong>Price:</strong> ${bus.price}</p>
-                `;
-
-                // Add click event to redirect to payment page
-                busCard.onclick = function() {
-                    window.location.href = `payment.html?busId=${bus.id}&departure=${encodeURIComponent(bus.departure)}&arrival=${encodeURIComponent(bus.arrival)}&date=${encodeURIComponent(bus.date)}&time=${encodeURIComponent(bus.time)}&price=${encodeURIComponent(bus.price)}`;
-                };
-
-                resultsDiv.appendChild(busCard);
-            });
-        }
-    </script>
-
+    <script src="search.js"></script>
 </body>
 </html>
