@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Operator Reports - Bus Ticket Reservation System</title>
-    <link rel="stylesheet" href="global.css">
-    <link rel="stylesheet" href="reports.css">
-
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Operator Reports - Bus Ticket Reservation System</title>
+        <link rel="stylesheet" href="global.css">
+        <link rel="stylesheet" href="reports.css">
 </head>
 <body>
     <header>
@@ -15,17 +14,14 @@
             <a href="index.html">Home</a>
             <a href="search.html">Search Buses</a>
             <a href="reports.html">Operator Reports</a>
-            <!-- <a href="cancel.html">Cancel Ticket</a>
-            <a href="change-date.html">Change Travel Date</a>
-            <a href="view-ticket.html">View Ticket</a> -->
             <a href="feedback.html">Feedback</a>
             <div class="account-menu">
                 <button onclick="toggleAccountMenu()">Account</button>
                 <div id="account-dropdown" class="dropdown-content">
-                    <a href="cancel.html">Cancel Ticket</a>
-                    <a href="change-date.html">Change Travel Date</a>
-                    <a href="view-ticket.html">View Ticket</a>
-                    <a href="login.html" onclick="showPage('login-signup')">Login/Sign Up</a>
+                        <a href="cancel.html">Cancel Ticket</a>
+                        <a href="change-date.html">Change Travel Date</a>
+                        <a href="view-ticket.html">View Ticket</a>
+                        <a href="login.html" onclick="showPage('login-signup')">Login/Sign Up</a>
                 </div>
             </div>
         </nav>
@@ -33,19 +29,20 @@
     <section id="reports" class="page">
         <h2>Operator Reports</h2>
         <form id="report-form">
-            <label for="report-type">Select Report Type:</label>
-            <select id="report-type">
-                <option value="booking">Booking Report</option>
-                <option value="revenue">Revenue Report</option>
-            </select>
-            <br>
-            <br>
-            <button type="button" onclick="generateReport()">Generate Report</button>
+                <label for="report-type">Select Report Type:</label>
+                <select id="report-type">
+                        <option value="booking">Booking Report</option>
+                        <option value="revenue">Revenue Report</option>
+                </select>
+                <br>
+                <br>
+                <button type="button" id="generate-report-btn">Generate Report</button>
         </form>
         <div id="report-output"></div>
     </section>
     <footer>
-        <p>&copy; 2024 Bus Ticket Reservation System</p>
+            <p>&copy; 2024 Bus Ticket Reservation System</p>
     </footer>
+    <script src="reports.js"></script>
 </body>
 </html>
